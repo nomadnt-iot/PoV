@@ -35,9 +35,9 @@ class uPoV{
 
     void __char(char c){
       for(uint8_t i = 0; i < (sizeof(alphabet) / sizeof(alphabet[0])); i++){
-        if(c == alphabet[i].code){
+        if(c == pgm_read_byte(&alphabet[i].code)){
           for(uint8_t j = 0; j < _size; j++){
-            __line(alphabet[i].value[j]);
+            __line(pgm_read_byte(&alphabet[i].value[j]));
             delay(_delayTime);
           }
           __line(0);
