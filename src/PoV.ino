@@ -1,3 +1,5 @@
+#include <alphabet.h>
+
 uint8_t delayTime = 2; //sub-char delay time
 uint8_t charBreak = 5; //char delay time
 
@@ -55,49 +57,29 @@ void displayLine(int line)
   int myline;
   myline = line;
 
-  if (myline>=16) {digitalWrite(LED[0], HIGH); myline-=16;} else {digitalWrite(LED[0], LOW);}
-  if (myline>=8)  {digitalWrite(LED[1], HIGH); myline-=8;}  else {digitalWrite(LED[1], LOW);}
-  if (myline>=4)  {digitalWrite(LED[2], HIGH); myline-=4;}  else {digitalWrite(LED[2], LOW);}
-  if (myline>=2)  {digitalWrite(LED[3], HIGH); myline-=2;}  else {digitalWrite(LED[3], LOW);}
-  if (myline>=1)  {digitalWrite(LED[4], HIGH); myline-=1;}  else {digitalWrite(LED[4], LOW);}
+  if(myline>=16){ digitalWrite(LED[0], HIGH); myline-=16; } else { digitalWrite(LED[0], LOW); }
+  if(myline>=8) { digitalWrite(LED[1], HIGH); myline-=8; } else { digitalWrite(LED[1], LOW); }
+  if(myline>=4) { digitalWrite(LED[2], HIGH); myline-=4; } else { digitalWrite(LED[2], LOW); }
+  if(myline>=2) { digitalWrite(LED[3], HIGH); myline-=2; } else { digitalWrite(LED[3], LOW); }
+  if(myline>=1) { digitalWrite(LED[4], HIGH); myline-=1; } else { digitalWrite(LED[4], LOW); }
 }
 
-void displayChar(char c)
-{
-  if (c == 'a'){for (int i = 0; i <5; i++){displayLine(a[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'b'){for (int i = 0; i <5; i++){displayLine(b[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'c'){for (int i = 0; i <5; i++){displayLine(c2[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'd'){for (int i = 0; i <5; i++){displayLine(d[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'e'){for (int i = 0; i <5; i++){displayLine(e[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'f'){for (int i = 0; i <5; i++){displayLine(f[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'g'){for (int i = 0; i <5; i++){displayLine(g[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'h'){for (int i = 0; i <5; i++){displayLine(h[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'i'){for (int it = 0; it <5; it++){displayLine(i[it]);delay(delayTime);}displayLine(0);}
-  if (c == 'j'){for (int i = 0; i <5; i++){displayLine(j[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'k'){for (int i = 0; i <5; i++){displayLine(k[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'l'){for (int i = 0; i <5; i++){displayLine(l[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'm'){for (int i = 0; i <5; i++){displayLine(m[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'n'){for (int i = 0; i <5; i++){displayLine(n[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'o'){for (int i = 0; i <5; i++){displayLine(o[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'p'){for (int i = 0; i <5; i++){displayLine(p[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'q'){for (int i = 0; i <5; i++){displayLine(q[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'r'){for (int i = 0; i <5; i++){displayLine(r[i]);delay(delayTime);}displayLine(0);}
-  if (c == 's'){for (int i = 0; i <5; i++){displayLine(s[i]);delay(delayTime);}displayLine(0);}
-  if (c == 't'){for (int i = 0; i <5; i++){displayLine(t[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'u'){for (int i = 0; i <5; i++){displayLine(u[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'v'){for (int i = 0; i <5; i++){displayLine(v[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'w'){for (int i = 0; i <5; i++){displayLine(w[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'x'){for (int i = 0; i <5; i++){displayLine(x[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'y'){for (int i = 0; i <5; i++){displayLine(y[i]);delay(delayTime);}displayLine(0);}
-  if (c == 'z'){for (int i = 0; i <5; i++){displayLine(z[i]);delay(delayTime);}displayLine(0);}
-  if (c == '!'){for (int i = 0; i <5; i++){displayLine(excl[i]);delay(delayTime);}displayLine(0);}
-  if (c == '?'){for (int i = 0; i <5; i++){displayLine(ques[i]);delay(delayTime);}displayLine(0);}
-  if (c == '.'){for (int i = 0; i <5; i++){displayLine(eos[i]);delay(delayTime);}displayLine(0);}
+void displayChar(char c){
+  for(uint8_t i = 0; i < (sizeof(alphabet) / sizeof(alphabet[0])); i++){
+    if(c == alphabet[i].code){
+      for(uint8_t j = 0; j < 5; j++){
+        displayLine(alphabet[i].value[j]);
+        delay(delayTime);
+      }
+      displayLine(0);
+    }
+  }
+
   delay(charBreak);
 }
 
-void displayString(char* s){
-  for(int i = 0; i<=strlen(s); i++){
+void displayString(const char* s){
+  for(uint8_t i = 0; i <= strlen(s); i++){
     displayChar(s[i]);
   }
 }
