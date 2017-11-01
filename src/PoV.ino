@@ -1,3 +1,7 @@
+/**
+ *  PoV is a very simple persistent of vision display that use ATTiny85
+ *  and 5 leds
+ **/
 #include <uPoV.h>
 
 // led matrix
