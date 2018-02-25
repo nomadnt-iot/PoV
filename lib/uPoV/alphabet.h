@@ -6,7 +6,6 @@ struct alpha_t{
 };
 
 const PROGMEM alpha_t alphabet[] = {
-//const alpha_t alphabet[] = {
   {'a', { 1,  6, 26,  6,  1}},
   {'b', {31, 21, 21, 10,  0}},
   {'c', {14, 17, 17, 10,  0}},

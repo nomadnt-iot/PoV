@@ -6,7 +6,7 @@
 
 // led matrix
 uint8_t LED[] = {4, 3, 2, 1, 0};
-uPoV pov = uPoV(LED, 5, 2, 5);
+uPoV pov = uPoV(LED, 5);
 
 void setup(){
   for(uint8_t i = 0; i < (sizeof(LED) / sizeof(LED[0])); i++){
