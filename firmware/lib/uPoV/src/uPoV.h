@@ -51,6 +51,11 @@ class uPoV{
 		 * display single line of a char
 		 */
     	void __line(uint8_t line);
+
+		/**
+		 * display single line of a char
+		 */
+    	void __pixel(uint8_t line);
 };
 
 #endif
