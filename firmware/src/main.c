@@ -5,21 +5,16 @@
 #include <hardware.h>
 #include <uPoV.h>
 
-#define DELAY_TIME 2
-#define CHAR_BREAK 5
-
 // defining led array
-unsigned char LED[LEDS_COUNT] = {PB0, PB1, PB2, PB3, PB4};
+unsigned char LED[LEDS_COUNT] = {PB4, PB3, PB2, PB1, PB0};
 
 int main(void)
 {
-    // Set led from 1 to 5 as output
+    // Heremany ways how to assign pin a outout 
     // LEDS_DDR |= (_BV(PB0) | _BV(PB1) | _BV(PB2) | _BV(PB3) | _BV(PB4));
-
-    for (unsigned char i = 0; i < LEDS_COUNT; i++)
-    {
-        _sbi(LEDS_DDR, LED[i]);
-    }
+    // LEDS_DDR = 0x1F;
+    // LEDS_DDR = 32;
+    // LEDS_DDR = (1 << LEDS_COUNT) - 1;
 
     for (unsigned char i = 0; i < LEDS_COUNT; i++)
     {
@@ -35,6 +30,6 @@ int main(void)
 
     while (1)
     {
-        display(LED, "jacopo sallemi", DELAY_TIME, CHAR_BREAK);
+        display(LED, "jacopo sallemi", 2, 5);
     }
 }

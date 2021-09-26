@@ -1,3 +1,6 @@
+#ifndef SYMBOLS_H
+#define SYMBOLS_H
+
 #include <avr/pgmspace.h>
 
 struct symbol_t
@@ -69,3 +72,5 @@ const PROGMEM struct symbol_t symbols[] = {
     {'=', {10, 10, 10, 10, 10}},
     {'<', {4, 10, 17, 0, 0}},
     {'>', {17, 10, 4, 0, 0}}};
+
+#endif
