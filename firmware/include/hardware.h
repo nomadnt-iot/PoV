@@ -4,6 +4,8 @@
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 
+// #define F_CPU 1000000UL
+
 #define LEDS_COUNT 5
 #define LEDS_PORT PORTB
 #define LEDS_DDR DDRB

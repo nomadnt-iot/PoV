@@ -5,10 +5,13 @@
 #include <hardware.h>
 #include <uPoV.h>
 
-#define F_CPU 1000000UL
+#define DELAY_TIME 2
+#define CHAR_BREAK 5
 
-// led matrix
-unsigned char LED[LEDS_COUNT] = {PB4, PB3, PB2, PB1, PB0};
+// defining led array
+// unsigned char LED[LEDS_COUNT] = {PB4, PB3, PB2, PB1, PB0};
+// defining led array inverse
+unsigned char LED[LEDS_COUNT] = {PB0, PB1, PB2, PB3, PB4};
 
 int main(void)
 {
@@ -34,6 +37,6 @@ int main(void)
 
     while (1)
     {
-        display(LED, "hello world");
+        display(LED, "jacopo sallemi", DELAY_TIME, CHAR_BREAK);
     }
 }
