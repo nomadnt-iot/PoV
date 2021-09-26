@@ -5,7 +5,7 @@
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 #include <util/delay.h>
-#include <symbols.h>
+#include "symbols.h"
 
 #define COLS_COUNT 5
 #define LEDS_COUNT 5
