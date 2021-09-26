@@ -9,8 +9,6 @@
 #define CHAR_BREAK 5
 
 // defining led array
-// unsigned char LED[LEDS_COUNT] = {PB4, PB3, PB2, PB1, PB0};
-// defining led array inverse
 unsigned char LED[LEDS_COUNT] = {PB0, PB1, PB2, PB3, PB4};
 
 int main(void)
