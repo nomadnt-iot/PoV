@@ -54,8 +54,3 @@ LEDS CONNECTION
 ```
 
 The ATTinyX5 has only `PORTB` and can handle only 5 GPIO so [symbols.h](include/symbols.h) is provided to handle only char 5x5 pixels. Feel free to change it in according to your requirements.
-
-## TODO
-
- - Make new schematic;
- - Make new PCB;
