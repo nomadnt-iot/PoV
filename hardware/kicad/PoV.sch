@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:PoV-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -15,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATtiny:ATtiny85-20PU U1
+L PoV-rescue:ATtiny85-20PU-MCU_Microchip_ATtiny U1
 U 1 1 6151AF9F
 P 6000 4000
 F 0 "U1" H 5471 4046 50  0000 R CNN
@@ -154,13 +153,13 @@ Connection ~ 7800 2900
 $Comp
 L Switch:SW_DPDT_x2 SW1
 U 1 1 6154A9DE
-P 4000 3300
-F 0 "SW1" H 4000 3585 50  0000 C CNN
-F 1 "SW_DPDT_x2" H 4000 3494 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_CuK_JS202011AQN_DPDT_Angled" H 4000 3300 50  0001 C CNN
-F 3 "~" H 4000 3300 50  0001 C CNN
-	1    4000 3300
-	1    0    0    -1  
+P 4000 3400
+F 0 "SW1" H 4000 3685 50  0000 C CNN
+F 1 "SW_DPDT_x2" H 4000 3594 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_CuK_JS202011AQN_DPDT_Angled" H 4000 3400 50  0001 C CNN
+F 3 "~" H 4000 3400 50  0001 C CNN
+	1    4000 3400
+	-1   0    0    1   
 $EndComp
 Connection ~ 4500 3400
 NoConn ~ 4200 3200
@@ -185,10 +184,6 @@ Wire Wire Line
 	3450 3850 3450 3300
 Wire Wire Line
 	4500 3300 4500 3400
-Wire Wire Line
-	4500 3400 4200 3400
-Wire Wire Line
-	3800 3300 3450 3300
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 6156979C
@@ -202,4 +197,8 @@ F 3 "~" H 4500 4750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4500 4600 4500 4750
+Wire Wire Line
+	4200 3400 4500 3400
+Wire Wire Line
+	3450 3300 3800 3300
 $EndSCHEMATC
