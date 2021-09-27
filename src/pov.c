@@ -5,6 +5,9 @@
 
 int main(void)
 {
+    // DIsabling Analog to digital converter to save power
+    ADCSRA = 0;
+
     // Here many ways how to assign pin a outout 
     DDRB = 0x1F; // DDRB = 32; // DDRB = _BV(LEDS_COUNT) - 1;
     // DDRB |= (_BV(PB0) | _BV(PB1) | _BV(PB2) | _BV(PB3) | _BV(PB4));

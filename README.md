@@ -8,17 +8,6 @@ It is making use of all 5 pins available on ATTinyX5 chips family and it is writ
 The ATTinyX5 has only 5 GPIO pins suitable to drive our display. The follow schema
 will help you to better understand how leds are connected to each pin.
 
-```
-ATTINYX5 LED CONNECTION
-
-              +-\/-+
-        PB5  1|    |8   VCC
-(LED4)  PB3  2|    |7   PB2  (LED3)
-(LED5)  PB4  3|    |6   PB1  (LED2)
-        GND  4|    |5   PB0  (LED1)
-              +----+
-```
-
 It is using only 16 bytes of RAM and 634 bytes of Flash memory
 
 ```sh
@@ -64,8 +53,9 @@ LEDS CONNECTION
 
 ```
 
-The ATTinyX5 has only `PORTB` and can handle only 5 GPIO so `symbols.h` is provided to handle only char 5x5 pixels
+The ATTinyX5 has only `PORTB` and can handle only 5 GPIO so [symbols.h](include/symbols.h) is provided to handle only char 5x5 pixels. Feel free to change it in according to your requirements.
 
 ## TODO
 
-- Disable all the peripherals that are not needed (ie. ADC)
+ - Make new schematic;
+ - Make new PCB;
