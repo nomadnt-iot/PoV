@@ -1,12 +1,14 @@
-- [PoV](#pov)
+- [What is a PoV display](#what-is-a-pov-display)
 - [How it's work](#how-its-work)
   - [Output pins](#output-pins)
   - [Display text](#display-text)
 - [Hardware](#hardware)
-  - [Components](#components)
+  - [Components used](#components-used)
 - [Useful links](#useful-links)
 
-# PoV
+# What is a PoV display
+
+- [Persistence of Vision](https://en.wikipedia.org/wiki/Persistence_of_vision)
 
 **PoV** is a very simple **P**ersistent **o**f **V**ision display based on Atmel ATTinyX5 chips family.
 It is making use of all 5 pins available on ATTinyX5 chips family and it is written in pure AVR-C.
@@ -88,18 +90,20 @@ Anyways you can use both of them as starting point to your PoV project.
 - [Schematic](hardware/schematic.pdf)
 - [3D model](hardware/PoV.png)
 
-## Components
+## Components used
 
 - 1x ATTinyX5
 - 5x leds green
-- 1x decoupling capacitor
+- 1x 100 nF decoupling capacitor
 - 1x switch
+- 1x R2032
 - 1x battery holder for CR2032
 - Stripboard
 - Some soldering cable
 
-The circuit is power by a CR2032 so this is the reason for the switch... to turn on and off the PoV as required. The decoupling
-capacitor is always a good idea to have expecially when we are powering device through battery and is connected as closet as possible the ATTinyX5. And finally The leds are all connected from the bottom to the top to the ATTinyX5's pins PB0, PB1, PB2, PB3, PB4.
+The circuit is power by a CR2032 so this is the reason for the switch... to turn on and off the PoV as required.  
+The decoupling capacitor is always a good idea to have expecially when we are powering devices through battery and is connected as closet as possible the ATTinyX5.  
+And finally The leds are all connected from the bottom to the top to the ATTinyX5's pins PB0, PB1, PB2, PB3, PB4.
 
 ```
 LEDS CONNECTION
@@ -123,7 +127,8 @@ LEDS CONNECTION
 
 ```
 
-The ATTinyX5 has only `PORTB` and can handle only 5 GPIO so [symbols.h](include/symbols.h) is provided to handle only char 5x5 pixels. Feel free to change it in according to your requirements.
+The ATTinyX5 has only `PORTB` and can handle only 5 GPIO so [symbols.h](include/symbols.h) is provided to handle only char 5x5 pixels.  
+Feel free to change it in according to your requirements.
 
 # Useful links
 
