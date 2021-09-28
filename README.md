@@ -1,9 +1,19 @@
-# PoV
+- [What is a PoV display](#what-is-a-pov-display)
+- [How it's work](#how-its-work)
+  - [Output pins](#output-pins)
+  - [Display text](#display-text)
+- [Hardware](#hardware)
+  - [Components used](#components-used)
+- [Useful links](#useful-links)
+
+# What is a PoV display
+
+- [Persistence of Vision](https://en.wikipedia.org/wiki/Persistence_of_vision)
 
 **PoV** is a very simple **P**ersistent **o**f **V**ision display based on Atmel ATTinyX5 chips family.
 It is making use of all 5 pins available on ATTinyX5 chips family and it is written in pure AVR-C.
 
-## How it's work
+# How it's work
 
 The ATTinyX5 has only 5 GPIO pins suitable to drive our display. The follow schema
 will help you to better understand how leds are connected to each pin.
@@ -15,7 +25,7 @@ RAM:   [          ]   3.1% (used 16 bytes from 512 bytes)
 Flash: [=         ]   7.7% (used 634 bytes from 8192 bytes)
 ```
 
-### Output pins
+## Output pins
 
 First we have to set all the 5 pins on the ATTinyX5 as output.
 
@@ -29,7 +39,7 @@ int main(void)
 }
 ```
 
-### Display text
+## Display text
 
 In order to display text we need to call the `display` method in a loop like the following
 
@@ -47,7 +57,7 @@ int main(void)
 }
 ```
 
-Than the display function is looping through all the chars in the string and call the `display_char` method that is just getting the encoded corrisponding `value` related to the processed char and than configure the `PORTB` in accoding to the value.
+Than the `display` function is looping through all the chars in the string and call the `display_char` method that is just getting the encoded corrisponding `value` related to the processed char and than configure the `PORTB` in accoding to the value.
 
 ```c
 void display_char(const char c, unsigned char delayTime, unsigned char charBreak)
@@ -72,7 +82,7 @@ void display_char(const char c, unsigned char delayTime, unsigned char charBreak
 }
 ```
 
-## Hardware 
+# Hardware 
 
 The [Hardware](hardware) folder contains my first eagle implementation and a new version based on KiKad.
 Anyways you can use both of them as starting point to your PoV project. 
@@ -80,18 +90,20 @@ Anyways you can use both of them as starting point to your PoV project.
 - [Schematic](hardware/schematic.pdf)
 - [3D model](hardware/PoV.png)
 
-### Components
+## Components used
 
 - 1x ATTinyX5
 - 5x leds green
-- 1x decoupling capacitor
+- 1x 100 nF decoupling capacitor
 - 1x switch
+- 1x R2032
 - 1x battery holder for CR2032
 - Stripboard
 - Some soldering cable
 
-The circuit is power by a CR2032 so this is the reason for the switch... to turn on and off the PoV as required. The decoupling
-capacitor is always a good idea to have expecially when we are powering device through battery and is connected as closet as possible the ATTinyX5. And finally The leds are all connected from the bottom to the top to the ATTinyX5's pins PB0, PB1, PB2, PB3, PB4.
+The circuit is power by a CR2032 so this is the reason for the switch... to turn on and off the PoV as required.  
+The decoupling capacitor is always a good idea to have expecially when we are powering devices through battery and is connected as closet as possible the ATTinyX5.  
+And finally The leds are all connected from the bottom to the top to the ATTinyX5's pins PB0, PB1, PB2, PB3, PB4.
 
 ```
 LEDS CONNECTION
@@ -115,9 +127,10 @@ LEDS CONNECTION
 
 ```
 
-The ATTinyX5 has only `PORTB` and can handle only 5 GPIO so [symbols.h](include/symbols.h) is provided to handle only char 5x5 pixels. Feel free to change it in according to your requirements.
+The ATTinyX5 has only `PORTB` and can handle only 5 GPIO so [symbols.h](include/symbols.h) is provided to handle only char 5x5 pixels.  
+Feel free to change it in according to your requirements.
 
-## Useful links
+# Useful links
 
 - [Programming AVR Microcontrollers in C - O'Reilly Webcast](https://youtu.be/ERY7d7W-6nA)
 - [Font 5x5 pixel resource 1](https://www.dafont.com/5x5.font)
