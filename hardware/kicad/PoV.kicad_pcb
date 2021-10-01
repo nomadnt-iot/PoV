@@ -3,13 +3,20 @@
   (general
     (thickness 1.6)
     (drawings 4)
-    (tracks 35)
+    (tracks 36)
     (zones 0)
     (modules 9)
     (nets 11)
   )
 
   (page A4)
+  (title_block
+    (title PoV)
+    (date 2021-10-01)
+    (rev 1)
+    (company "Filippo Sallemi")
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
@@ -537,12 +544,13 @@
   (segment (start 147.32 72.39) (end 154.94 72.39) (width 0.25) (layer B.Cu) (net 6))
   (segment (start 160.02 116.84) (end 165.1 116.84) (width 0.25) (layer B.Cu) (net 7))
   (segment (start 165.1 116.84) (end 165.1 45.72) (width 0.25) (layer B.Cu) (net 7))
-  (segment (start 165.1 45.72) (end 149.86 45.72) (width 0.25) (layer B.Cu) (net 7))
-  (segment (start 149.86 45.72) (end 149.86 62.23) (width 0.25) (layer B.Cu) (net 7))
-  (segment (start 149.86 62.23) (end 154.94 62.23) (width 0.25) (layer B.Cu) (net 7))
+  (segment (start 165.1 45.72) (end 147.32 45.72) (width 0.25) (layer B.Cu) (net 7))
+  (segment (start 147.32 45.72) (end 147.32 62.23) (width 0.25) (layer B.Cu) (net 7))
+  (segment (start 147.32 62.23) (end 154.94 62.23) (width 0.25) (layer B.Cu) (net 7))
   (segment (start 160.02 114.3) (end 162.56 114.3) (width 0.25) (layer B.Cu) (net 8))
   (segment (start 162.56 114.3) (end 162.56 48.26) (width 0.25) (layer B.Cu) (net 8))
-  (segment (start 162.56 48.26) (end 154.94 48.26) (width 0.25) (layer B.Cu) (net 8))
-  (segment (start 154.94 48.26) (end 154.94 52.07) (width 0.25) (layer B.Cu) (net 8))
+  (segment (start 154.94 52.07) (end 149.86 52.07) (width 0.25) (layer B.Cu) (net 8))
+  (segment (start 149.86 52.07) (end 149.86 48.26) (width 0.25) (layer B.Cu) (net 8))
+  (segment (start 149.86 48.26) (end 162.56 48.26) (width 0.25) (layer B.Cu) (net 8))
 
 )
