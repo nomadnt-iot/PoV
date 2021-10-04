@@ -1,4 +1,5 @@
 - [What is a PoV display](#what-is-a-pov-display)
+- [Introduction](#introduction)
 - [How it's work](#how-its-work)
   - [Output pins](#output-pins)
   - [Display text](#display-text)
@@ -8,15 +9,20 @@
 
 # What is a PoV display
 
-- [Persistence of Vision](https://en.wikipedia.org/wiki/Persistence_of_vision)
+[Here](https://en.wikipedia.org/wiki/Persistence_of_vision) the definition of Persistence of Vision Display from wikipedia.
+
+*The term "persistence of vision display" or "POV display" has been used for LED display devices that compose images by displaying one spatial portion at a time in rapid succession, (for example, one column of pixels every few milliseconds). A two-dimensional POV display is often accomplished by means of rapidly moving a single row of LEDs along a linear or circular path. The effect is that the image is perceived as a whole by the viewer as long as the entire path is completed during the visual persistence time of the human eye. A further effect is often to give the illusion of the image floating in mid-air.*
+
+A common example of this can be seen in the use of bicycle wheel lights that produce patterns.
+
+# Introduction
 
 **PoV** is a very simple **P**ersistent **o**f **V**ision display based on Atmel ATTinyX5 chips family.
 It is making use of all 5 pins available on ATTinyX5 chips family and it is written in pure AVR-C.
 
 # How it's work
 
-The ATTinyX5 has only 5 GPIO pins suitable to drive our display. The follow schema
-will help you to better understand how leds are connected to each pin.
+The ATTinyX5 has only 5 GPIO pins suitable to drive our display. The [Schematic](hardware/schematic.pdf) will help you to better understand how leds are connected to each pin.
 
 It is using only 16 bytes of RAM and 634 bytes of Flash memory
 
