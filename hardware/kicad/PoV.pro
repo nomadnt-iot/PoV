@@ -1,4 +1,4 @@
-update=it-Tnejn, 27 ta Set, 2021 17:35:00
+update=il-Ħadd, 10 ta Ott, 2021 10:01:24
 version=1
 last_client=kicad
 [general]

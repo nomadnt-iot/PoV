@@ -6,6 +6,7 @@
 - [Hardware](#hardware)
   - [Components used](#components-used)
 - [Useful links](#useful-links)
+- [TODO](#todo)
 
 # What is a PoV display
 
@@ -142,3 +143,9 @@ Feel free to change it in according to your requirements.
 - [Font 5x5 pixel resource 1](https://www.dafont.com/5x5.font)
 - [Font 5x5 pixel resource 2](https://www.1001fonts.com/5x5-font.html)
 - [ATTinyX5 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf)
+
+# TODO
+
+- make code non blocking
+- add V-USB support for micronucleous firmare.
+- reorganize fonts
